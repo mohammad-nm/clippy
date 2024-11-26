@@ -3,12 +3,11 @@ import NewClipBtn from "@/components/NewClipBtn";
 import { Typography } from "@mui/material";
 import { Card, CardContent } from "@mui/material";
 import axios from "axios";
-export default async function ShowPage({
-  params,
-}: {
-  params: { key: string };
-}) {
-  const { key } = params;
+interface ShowPageProps {
+  params: Promise<{ key: string }>;
+}
+export default async function ShowPage({ params }: ShowPageProps) {
+  const { key } = await params;
   const res = await axios.post(`http://localhost:3000/api/redis`, {
     key: key,
     command: "get",
