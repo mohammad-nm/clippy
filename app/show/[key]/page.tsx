@@ -12,6 +12,7 @@ export default async function ShowPage({ params }: ShowPageProps) {
     key: key,
     command: "get",
   });
+  if (!res.data.result) return <div>No data available!</div>;
   const data = JSON.parse(res.data.result);
 
   return (
