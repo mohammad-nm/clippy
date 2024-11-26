@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import ClientProvider from "@/components/ClientProvider";
 
 export const metadata: Metadata = {
   title: "Cllipy",
@@ -14,7 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <ClientProvider>
+        <body>{children}</body>
+      </ClientProvider>
     </html>
   );
 }

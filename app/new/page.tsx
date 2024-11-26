@@ -1,10 +1,17 @@
 "use server";
-import { TextField } from "@mui/material";
+
 import ExpirationSlider from "@/components/ExpirationSlider";
 import AddNewClipBtn from "@/components/AddNewClipBtn";
+import ClipTitle from "@/components/ClipTitle";
+import ClipContent from "@/components/ClipContent";
+import TitleError from "@/components/TitleError";
+import ContentError from "@/components/ContentError";
+import SendingClipSuccess from "@/components/SendingClipSuccess";
+
 export default async function Home() {
   return (
-    <div>
+    <div style={{ fontFamily: "monospace" }}>
+      <SendingClipSuccess />
       <div
         style={{
           display: "flex",
@@ -16,28 +23,29 @@ export default async function Home() {
         }}
       >
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          <div>
+          <div
+            style={{
+              fontSize: "15px",
+              fontWeight: "bold",
+            }}
+          >
             Enter your clipboard Title and the Content you want to save:
           </div>
-          <TextField id="title" label="Title" type="search" fullWidth />
-          <TextField
-            id="outlined-textarea"
-            label="Content"
-            placeholder="Type your content here..."
-            multiline
-            fullWidth
-            rows={4}
-          />
+          <ClipTitle />
+          <TitleError />
+          <ClipContent />
+          <ContentError />
           <div
             style={{
               display: "flex",
               gap: "30px",
               alignItems: "center",
               margin: "10px",
+              justifyContent: "space-between",
             }}
           >
-            <AddNewClipBtn />
             <ExpirationSlider />
+            <AddNewClipBtn />
           </div>
         </div>
       </div>

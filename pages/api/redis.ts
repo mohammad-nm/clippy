@@ -17,6 +17,7 @@ export default async function handler(
       });
     }
     if (!key) {
+      console.log("key not provided!", key);
       return res.status(400).json({ message: "key not provided!" });
     }
     if (command === "set" && !value && !expire) {

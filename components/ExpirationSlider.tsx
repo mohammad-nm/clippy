@@ -1,8 +1,10 @@
 "use client";
+import { setExpirationSlice } from "@/store/expirationSlice";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 const MAX = 24;
 const MIN = 1;
 const marks = [
@@ -20,9 +22,11 @@ const marks = [
   },
 ];
 export default function ExpirationSlider() {
+  const dispatch = useDispatch();
   const [val, setVal] = useState<number>(MIN);
   const handleChange = (_: Event, newValue: number | number[]) => {
     setVal(newValue as number);
+    dispatch(setExpirationSlice(newValue as number));
   };
   return (
     <div>
