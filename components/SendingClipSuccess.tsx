@@ -25,7 +25,9 @@ export default function SendingClipSuccess() {
         </Typography>
         <Typography variant="body1" color="textSecondary">
           You can access your ClipBoard at{" "}
-          <a href={""}>https://clip.khalid.dev/{key}</a>
+          <a href={`http://localhost:3000/show/${key}`}>
+            http://localhost:3000/show/{key}
+          </a>
         </Typography>
       </DialogContent>
       <DialogActions>

@@ -8,6 +8,7 @@ export default async function handler(
     if (req.method !== "POST") {
       res.setHeader("Allow", ["POST"]);
       res.status(405).end(`Method ${req.method} Not Alowed`);
+      return;
     }
     const { command, key, value, expire } = await req.body;
     if (!command) {
@@ -44,6 +45,7 @@ export default async function handler(
         return res.status(400).json({ error: "Command not correct" });
     }
     // console.log("result:", result);
+
     return res.status(200).json({ result });
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
