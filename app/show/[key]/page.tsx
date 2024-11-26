@@ -8,7 +8,7 @@ interface ShowPageProps {
 }
 export default async function ShowPage({ params }: ShowPageProps) {
   const { key } = await params;
-  const res = await axios.post(`http://localhost:3000/api/redis`, {
+  const res = await axios.post(`https://clippy-theta.vercel.app/api/redis`, {
     key: key,
     command: "get",
   });

@@ -24,9 +24,9 @@ export default function SendingClipSuccess() {
           Key: <strong>{key}</strong>
         </Typography>
         <Typography variant="body1" color="textSecondary">
-          You can access your ClipBoard at{" "}
-          <a href={`http://localhost:3000/show/${key}`}>
-            http://localhost:3000/show/{key}
+          You can share your ClipBoard with this link:{" "}
+          <a href={`https://clippy-theta.vercel.app/show/${key}`}>
+            https://clippy-theta.vercel.app/show/{key}
           </a>
         </Typography>
       </DialogContent>
