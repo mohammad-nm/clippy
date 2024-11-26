@@ -1,4 +1,6 @@
 "use server";
+import NewClipBtn from "@/components/NewClipBtn";
+import FindClipBtn from "@/components/FindClipBtn";
 export default async function Home() {
   return (
     <div>
@@ -6,14 +8,14 @@ export default async function Home() {
         style={{
           display: "flex",
           flexDirection: "row",
-          gap: "100px",
+          gap: "20px",
           justifyContent: "center",
           alignItems: "center",
           height: "100vh",
         }}
       >
-        <div>new clip board</div>
-        <div>find your clip board</div>
+        <NewClipBtn />
+        <FindClipBtn />
       </div>
     </div>
   );
