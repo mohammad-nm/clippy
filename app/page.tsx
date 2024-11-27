@@ -1,4 +1,5 @@
 "use server";
+
 import NewClipBtn from "@/components/NewClipBtn";
 import FindClipBtn from "@/components/FindClipBtn";
 export default async function Home() {

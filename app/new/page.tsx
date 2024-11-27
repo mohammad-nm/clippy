@@ -1,14 +1,35 @@
-"use server";
+"use client";
+import dynamic from "next/dynamic";
 
-import ExpirationSlider from "@/components/ExpirationSlider";
-import AddNewClipBtn from "@/components/AddNewClipBtn";
-import ClipTitle from "@/components/ClipTitle";
-import ClipContent from "@/components/ClipContent";
-import TitleError from "@/components/TitleError";
-import ContentError from "@/components/ContentError";
-import SendingClipSuccess from "@/components/SendingClipSuccess";
+const ExpirationSlider = dynamic(
+  () => import("@/components/ExpirationSlider"),
+  {
+    ssr: false,
+  }
+);
+const AddNewClipBtn = dynamic(() => import("@/components/AddNewClipBtn"), {
+  ssr: false,
+});
+const ClipTitle = dynamic(() => import("@/components/ClipTitle"), {
+  ssr: false,
+});
+const TitleError = dynamic(() => import("@/components/TitleError"), {
+  ssr: false,
+});
+const ClipContent = dynamic(() => import("@/components/ClipContent"), {
+  ssr: false,
+});
+const ContentError = dynamic(() => import("@/components/ContentError"), {
+  ssr: false,
+});
+const SendingClipSuccess = dynamic(
+  () => import("@/components/SendingClipSuccess"),
+  {
+    ssr: false,
+  }
+);
 
-export default async function Home() {
+export default function Home() {
   return (
     <div style={{ fontFamily: "monospace" }}>
       <SendingClipSuccess />
