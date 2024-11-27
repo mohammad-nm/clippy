@@ -17,6 +17,9 @@ export default function AddNewClipBtn() {
   const title: string | null = useSelector((state: any) => state.title);
   const content: string | null = useSelector((state: any) => state.content);
   const expire: number = useSelector((state: any) => state.expiration.expire);
+  const oneTime: boolean = useSelector((state: any) => state.oneTime);
+  const password: string | null = useSelector((state: any) => state.password);
+
   const dispatch = useDispatch();
 
   const handleClick = async () => {
@@ -38,7 +41,14 @@ export default function AddNewClipBtn() {
     const res = await axios.post("/api/redis", {
       command: "set",
       key: key,
-      value: JSON.stringify({ title, content }),
+      value: JSON.stringify({
+        title,
+        content,
+        password,
+        oneTime,
+        expire,
+        date: new Date().toISOString(),
+      }),
       expire: expire * 3600,
     });
     if (res.data.result === "OK") {

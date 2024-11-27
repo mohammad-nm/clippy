@@ -12,6 +12,7 @@ export default function ClipTitle() {
         label="Title"
         type="search"
         fullWidth
+        
         onChange={(e) => dispatch(setTitleSlice(e.target.value as string))}
       />
     </div>

@@ -1,10 +1,7 @@
-"use server";
-
 import NoData from "@/components/NoData";
-import PasswordForm from "@/components/PasswordForm";
 import ShowData from "@/components/ShowData";
-
 import axios from "axios";
+
 interface ShowPageProps {
   params: Promise<{ key: string }>;
 }
@@ -19,10 +16,5 @@ export default async function ShowPage({ params }: ShowPageProps) {
   if (!res.data.result) return <NoData />;
 
   const data = JSON.parse(res.data.result);
-
-  if (data.password) {
-    return <PasswordForm pass={data.password} />;
-  }
-
   return <ShowData data={data} keyValue={key} />;
 }

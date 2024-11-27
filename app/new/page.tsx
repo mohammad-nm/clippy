@@ -1,4 +1,9 @@
 "use client";
+import FindClipBtn from "@/components/FindClipBtn";
+import NewClipBtn from "@/components/NewClipBtn";
+import OneTimeUseCheckBox from "@/components/OneTimeUseCheckBox";
+import Password from "@/components/Password";
+import { Card } from "@mui/material";
 import dynamic from "next/dynamic";
 
 const ExpirationSlider = dynamic(
@@ -31,45 +36,89 @@ const SendingClipSuccess = dynamic(
 
 export default function Home() {
   return (
-    <div style={{ fontFamily: "monospace" }}>
+    <div style={{ backgroundColor: "#F0F0F0", fontFamily: "monospace" }}>
       <SendingClipSuccess />
-      <div
+      <Card
         style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "10px",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
+          width: "fit-content",
+          height: "fit-content",
+
+          marginTop: "10%",
         }}
       >
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          <div
-            style={{
-              fontSize: "15px",
-              fontWeight: "bold",
-            }}
-          >
-            Enter your clipboard Title and the Content you want to save:
-          </div>
-          <ClipTitle />
-          <TitleError />
-          <ClipContent />
-          <ContentError />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+            justifyContent: "start",
+            alignItems: "center",
+          }}
+        >
           <div
             style={{
               display: "flex",
-              gap: "30px",
-              alignItems: "center",
-              margin: "10px",
-              justifyContent: "space-between",
+              flexDirection: "column",
+              gap: "10px",
+              margin: "20px",
+              marginTop: "30px",
             }}
           >
-            <ExpirationSlider />
-            <AddNewClipBtn />
+            <div
+              style={{
+                fontSize: "2rem",
+                fontWeight: "bold",
+                textAlign: "left",
+                marginBottom: "2rem",
+              }}
+            >
+              Create your clipboard:{" "}
+              <span
+                style={{
+                  display: "block",
+                  fontSize: "1rem",
+                  color: "gray",
+                  marginTop: "10px",
+                }}
+              >
+                Add a title and content to save.
+              </span>
+            </div>
+            <ClipTitle />
+            <TitleError />
+            <ClipContent />
+            <ContentError />
+            <div
+              style={{
+                display: "flex",
+                gap: "30px",
+                alignItems: "start",
+                margin: "10px",
+                justifyContent: "space-between",
+              }}
+            >
+              <div
+                style={{
+                  marginLeft: "10px",
+                  display: "flex",
+                  gap: "30px",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  justifyContent: "start",
+                }}
+              >
+                <ExpirationSlider />
+                <OneTimeUseCheckBox />
+                <Password />
+              </div>
+              <AddNewClipBtn />
+            </div>
+            <div style={{ marginTop: "20px" }}>
+              <FindClipBtn />
+            </div>
           </div>
         </div>
-      </div>
+      </Card>
     </div>
   );
 }

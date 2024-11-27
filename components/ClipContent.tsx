@@ -13,7 +13,7 @@ export default function ClipContent() {
         placeholder="Type your content here..."
         multiline
         fullWidth
-        rows={4}
+        rows={10}
         onChange={(e) => {
           dispatch(setContentSlice(e.target.value));
         }}
