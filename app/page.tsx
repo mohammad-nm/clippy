@@ -10,7 +10,7 @@ export default async function Home() {
         style={{
           display: "flex",
           flexDirection: "column",
-
+          justifyContent: "center",
           alignItems: "center",
           height: "100vh",
           backgroundColor: "#F0F0F0",
@@ -23,7 +23,6 @@ export default async function Home() {
             flexDirection: "column",
             gap: "10px",
             marginBottom: "50px",
-            marginTop: "40%",
           }}
         >
           <Typography variant="h4">Create a new clip</Typography>
