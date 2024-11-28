@@ -39,9 +39,9 @@ const SendingClipSuccess = dynamic(
 export default function Home() {
   const expiration = useSelector((state: any) => state.expiration.expire);
   return (
-    <div className="flex font-mono justify-center items-center p-10 bg-[#F0F0F0] max-w-[500px]:p-4">
+    <div className="flex font-mono justify-center items-center p-10 bg-[#F0F0F0] max-w-[500px]:p-4 ">
       <SendingClipSuccess />
-      <Card className="w-full h-fit font-mono mt-1/2 p-10">
+      <Card className="w-full h-fit font-mono mt-1/2 p-10 max-w-[500px]:p-4">
         <div className="flex flex-col gap-4 mt-6">
           <div className="flex flex-wrap gap-2 ">
             <div className="text-2xl font-bold text-left mb-4">

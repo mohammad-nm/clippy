@@ -6,7 +6,7 @@ import { Card, Typography } from "@mui/material";
 export default async function Home() {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100 font-mono p-10 max-w-[500px]:p-4">
-      <Card className="p-10 flex flex-col items-center gap-10 bg-white rounded-lg shadow-lg ">
+      <Card className="p-10 flex flex-col items-center gap-10 bg-white rounded-lg shadow-lg max-w-[500px]:p-4">
         <div className="flex items-center gap-10">
           <Typography className="text-2xl font-bold text-center">
             Create a clip board or find one using the Clipboard ID you have!
