@@ -35,7 +35,7 @@ export default function ExpirationSlider() {
   return (
     <CacheProvider value={cache}>
       <div>
-        <Box sx={{ width: 250 }}>
+        <Box className="w-60">
           <Slider
             marks={marks}
             step={1}
@@ -45,7 +45,7 @@ export default function ExpirationSlider() {
             max={MAX}
             onChange={handleChange}
           />
-          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box className="flex justify-between">
             <Typography
               variant="body2"
               onClick={() => setVal(MIN)}

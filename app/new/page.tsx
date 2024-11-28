@@ -4,7 +4,9 @@ import NewClipBtn from "@/components/NewClipBtn";
 import OneTimeUseCheckBox from "@/components/OneTimeUseCheckBox";
 import Password from "@/components/Password";
 import { Card } from "@mui/material";
+import { RootState } from "@reduxjs/toolkit/query/react";
 import dynamic from "next/dynamic";
+import { useSelector } from "react-redux";
 
 const ExpirationSlider = dynamic(
   () => import("@/components/ExpirationSlider"),
@@ -35,105 +37,41 @@ const SendingClipSuccess = dynamic(
 );
 
 export default function Home() {
+  const expiration = useSelector((state: any) => state.expiration.expire);
   return (
-    <div
-      style={{
-        display: "flex",
-        fontFamily: "monospace",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="flex font-mono justify-center items-center p-10 bg-[#F0F0F0]">
       <SendingClipSuccess />
-
-      <Card
-        style={{
-          width: "fit-content",
-          height: "fit-content",
-          fontFamily: "monospace",
-          marginTop: "10%",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-            justifyContent: "start",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "10px",
-              margin: "20px",
-              marginTop: "30px",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "2rem",
-                fontWeight: "bold",
-                textAlign: "left",
-                marginBottom: "2rem",
-              }}
-            >
-              Create your clipboard:{" "}
-              <span
-                style={{
-                  display: "block",
-                  fontSize: "1rem",
-                  color: "gray",
-                  marginTop: "10px",
-                }}
-              >
-                Add a title and content to save.
-              </span>
+      <Card className="w-full h-fit font-mono mt-1/2 p-10">
+        <div className="flex flex-col gap-4 mt-6">
+          <div className="flex flex-wrap gap-2 ">
+            <div className="text-2xl font-bold text-left mb-4">
+              Create your clipboard:
             </div>
-            <ClipTitle />
-            <TitleError />
-            <ClipContent />
-            <ContentError />
-            <div
-              style={{
-                display: "flex",
-                gap: "30px",
-                alignItems: "start",
-                margin: "10px",
-                justifyContent: "space-between",
-              }}
-            >
-              <div
-                style={{
-                  marginLeft: "10px",
-                  display: "flex",
-                  gap: "30px",
-                  flexDirection: "row",
-                  flexWrap: "wrap",
-                  justifyContent: "start",
-                  alignItems: "center",
-                }}
-              >
-                <div>
-                  <div
-                    style={{
-                      fontSize: "1rem",
-                      marginLeft: "-10px",
-                      marginBottom: "10px",
-                    }}
-                  >
-                    Expiration time:
-                  </div>
-                  <ExpirationSlider />
+            <div className="text-sm text-gray-500 ml-2">
+              Add a title and content to save.
+            </div>
+          </div>
+          <ClipTitle />
+          <TitleError />
+          <ClipContent />
+          <ContentError />
+          <div className="flex flex-wrap justify-center items-center w-full">
+            <div className="flex flex-col gap-4 w-full">
+              <div className="flex gap-4  font-semibold flex-col ">
+                <div className="text-lg">
+                  Expiration: {expiration} {expiration > 1 ? "Hours" : "Hour"}
                 </div>
-                <OneTimeUseCheckBox />
-                <Password />
+
+                <ExpirationSlider />
               </div>
-              <AddNewClipBtn />
+              <div className="flex items-center gap-4">
+                <OneTimeUseCheckBox />
+              </div>
+
+              <Password />
             </div>
-            <div style={{ marginTop: "20px" }}>
+            <div className="flex items-center gap-6 mt-10">
+              <AddNewClipBtn />
               <FindClipBtn />
             </div>
           </div>

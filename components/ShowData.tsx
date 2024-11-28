@@ -30,55 +30,33 @@ export default async function ShowData({
     deleteClip();
   }
   return (
-    <div
-      style={{
-        width: "90%",
-        margin: "auto",
-        fontFamily: "monospace",
-        marginTop: "100px",
-        backgroundColor: "#F0F0F0",
-      }}
-    >
-      <Card variant="outlined" sx={{ maxWidth: "100%", padding: "10px" }}>
-        <CardContent sx={{ padding: "20px" }}>
+    <div className="w-90% m-auto font-mono bg-[#F0F0F0] mt-20 p-10 ">
+      <Card variant="outlined" className="max-w-full p-4 ">
+        <CardContent className="p-8">
           <Typography variant="h5" component="div">
             Clipboard ID: {keyValue}
           </Typography>
           <Typography
             variant="body2"
             color="text.secondary"
-            style={{ marginTop: "10px", fontSize: "1.2rem" }}
+            className="mt-4 font-semibold text-lg"
           >
             Title:
           </Typography>
-          <Card
-            variant="outlined"
-            sx={{ marginTop: "5px", padding: "10px", fontSize: "1rem" }}
-          >
+          <Card variant="outlined" className="mt-2 p-4 text-sm " dir="auto">
             {data?.title}
           </Card>
           <Typography
             variant="body2"
             color="text.secondary"
-            style={{ marginTop: "10px", fontSize: "1.2rem" }}
+            className="mt-4 font-semibold text-lg"
           >
             Content:
           </Typography>
-          <Card
-            variant="outlined"
-            sx={{ marginTop: "5px", padding: "10px", fontSize: "1rem" }}
-          >
+          <Card variant="outlined" className="mt-2 p-4 text-sm" dir="auto">
             {data?.content}
           </Card>
-          <div
-            style={{
-              marginTop: "10px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "5px",
-              marginLeft: "10px",
-            }}
-          >
+          <div className="mt-4 flex flex-col gap-2 ml-4">
             <Typography variant="body2" color="text.secondary">
               Password: {data?.password ? data?.password : "No Password"}
             </Typography>
@@ -102,7 +80,7 @@ export default async function ShowData({
             </Typography>
           </div>
         </CardContent>
-        <div style={{ display: "flex", justifyContent: "center", gap: "10px" }}>
+        <div className="flex justify-center gap-10 mb-4">
           <FindClipBtn />
           <NewClipBtn />
         </div>

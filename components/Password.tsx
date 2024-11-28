@@ -11,8 +11,8 @@ export default function Password() {
   const [isPasswordPeotected, setIsPasswordPeotected] = useState(false);
   const dispatch = useDispatch();
   return (
-    <div>
-      <FormGroup>
+    <div className="flex flex-col gap-2 ">
+      <FormGroup className="w-fit">
         <FormControlLabel
           control={
             <Checkbox
@@ -26,16 +26,18 @@ export default function Password() {
           }
           label="Password Protected"
         />
+        {isPasswordPeotected ? (
+          <div className="w-full">
+            <TextField
+              id="password"
+              label="Password"
+              type="password"
+              fullWidth
+              onChange={(e) => dispatch(setPasswordSlice(e.target.value))}
+            />
+          </div>
+        ) : null}
       </FormGroup>
-      {isPasswordPeotected ? (
-        <TextField
-          id="password"
-          label="Password"
-          type="password"
-          fullWidth
-          onChange={(e) => dispatch(setPasswordSlice(e.target.value))}
-        />
-      ) : null}
     </div>
   );
 }

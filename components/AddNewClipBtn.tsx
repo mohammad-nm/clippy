@@ -3,6 +3,7 @@ import { setErrorSlice } from "@/store/errorSlice";
 import { setSuccessSlice } from "@/store/successModal";
 import { Button } from "@mui/material";
 import axios from "axios";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 const generateShortId = (length: number) => {
   const chars = "abcdefghijkmnpqrstuvwxyz";
@@ -13,6 +14,7 @@ const generateShortId = (length: number) => {
   return id;
 };
 export default function AddNewClipBtn() {
+  const [loading, setLoading] = useState(false);
   let key: string = generateShortId(6);
   const title: string | null = useSelector((state: any) => state.title);
   const content: string | null = useSelector((state: any) => state.content);
@@ -23,6 +25,7 @@ export default function AddNewClipBtn() {
   const dispatch = useDispatch();
 
   const handleClick = async () => {
+    setLoading(true);
     if (!title || !content) {
       dispatch(
         setErrorSlice({
@@ -30,6 +33,7 @@ export default function AddNewClipBtn() {
           content: content === null ? true : false,
         })
       );
+      setLoading(false);
       return;
     }
     dispatch(
@@ -38,6 +42,7 @@ export default function AddNewClipBtn() {
         content: false,
       })
     );
+    setLoading(false);
     const res = await axios.post("/api/redis", {
       command: "set",
       key: key,
@@ -65,10 +70,8 @@ export default function AddNewClipBtn() {
   };
 
   return (
-    <div>
-      <Button variant="contained" onClick={handleClick}>
-        create
-      </Button>
-    </div>
+    <Button variant="contained" onClick={handleClick}>
+      {loading ? "Loading..." : "Create"}
+    </Button>
   );
 }

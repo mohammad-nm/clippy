@@ -6,6 +6,7 @@ import NewClipBtn from "./NewClipBtn";
 import FindClipBtn from "./FindClipBtn";
 
 export default function PasswordForm({ pass }: { pass: string }) {
+  const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const router = useRouter();
@@ -19,44 +20,29 @@ export default function PasswordForm({ pass }: { pass: string }) {
   };
 
   const handleSubmit = () => {
+    setLoading(true);
+    setError(false);
     if (password === pass) {
+      setLoading(false);
       router.push(`/show/${key}/${password}`);
     } else {
+      setLoading(false);
       setError(true);
     }
   };
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        fontFamily: "monospace",
-        gap: "20px",
-        backgroundColor: "#F0F0F0",
-      }}
-    >
-      <Typography variant="h4" gutterBottom style={{ fontFamily: "inherit" }}>
+    <div className="flex flex-col items-center justify-center h-screen font-mono gap-10 bg-[#F0F0F0]">
+      <div className="text-3xl font-semibold">
         Your Clipboard has a password!
-      </Typography>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "10px",
-        }}
-      >
+      </div>
+      <div className="flex flex-row items-center justify-center gap-10 ">
         <TextField
           label="Password"
           onChange={handleChange}
           style={{ width: "200px" }}
         />
         <Button variant="contained" color="primary" onClick={handleSubmit}>
-          Submit
+          {loading ? "Loading..." : "Try"}
         </Button>
       </div>
       {error && (
@@ -69,7 +55,7 @@ export default function PasswordForm({ pass }: { pass: string }) {
           *Wrong password!
         </Typography>
       )}
-      <div style={{ display: "flex", flexDirection: "row", gap: "10px" }}>
+      <div className="flex flex-row gap-4">
         <NewClipBtn />
         <FindClipBtn />
       </div>
