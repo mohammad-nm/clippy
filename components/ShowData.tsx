@@ -30,8 +30,8 @@ export default async function ShowData({
     deleteClip();
   }
   return (
-    <div className="w-90% m-auto font-mono bg-[#F0F0F0] mt-20 p-10 max-w-[500px]:p-4">
-      <Card variant="outlined" className="max-w-full p-6 max-w-[500px]:p-4">
+    <div className="w-90% m-auto font-mono bg-[#F0F0F0] mt-20 p-4 sm:p-10">
+      <Card variant="outlined" className="max-w-full p-6 sm:p-4">
         <CardContent className="p-8">
           <Typography variant="h5" component="div">
             Clipboard ID: {keyValue}

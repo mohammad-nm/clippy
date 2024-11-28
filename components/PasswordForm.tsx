@@ -31,7 +31,7 @@ export default function PasswordForm({ pass }: { pass: string }) {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center h-screen font-mono gap-10 bg-[#F0F0F0] max-w-[500px]:p-4">
+    <div className="flex flex-col items-center justify-center h-screen font-mono gap-10 bg-[#F0F0F0] p-4 sm:p-10">
       <div className="text-3xl font-semibold">
         Your Clipboard has a password!
       </div>

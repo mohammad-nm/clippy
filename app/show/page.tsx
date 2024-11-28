@@ -12,8 +12,8 @@ export default function Home() {
   const [error, setError] = useState(false);
 
   return (
-    <div className="flex flex-col gap-20 justify-center items-center h-screen bg-[#F0F0F0] font-mono p-6 max-w-[500px]:p-4">
-      <Card className="p-6 max-w-[500px]:p-4">
+    <div className="flex flex-col gap-20 justify-center items-center h-screen bg-[#F0F0F0] font-mono p-4 sm:p-10">
+      <Card className="p-6 sm:p-4">
         <div className="text-2xl font-bold mb-8 text-center">
           Enter your Clipboard id here to find it:
         </div>
