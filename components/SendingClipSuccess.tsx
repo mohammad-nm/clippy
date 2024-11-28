@@ -1,7 +1,7 @@
 "use client";
-import { clearExpirationSlice } from "@/store/expirationSlice";
-import { clearPasswordSlice } from "@/store/passwordSlice";
-import { clearContentSlice } from "@/store/contentSlice";
+import { setExpirationSlice } from "@/store/expirationSlice";
+import { setPasswordSlice } from "@/store/passwordSlice";
+import { setContentSlice } from "@/store/contentSlice";
 import { clearSuccessSlice } from "@/store/successModal";
 import {
   Button,
@@ -15,8 +15,8 @@ import { Dialog } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { clearOneTimeSlice } from "@/store/oneTimeSlice";
-import { clearTitleSlice } from "@/store/titleSlice";
+import { setOneTimeSlice } from "@/store/oneTimeSlice";
+import { setTitleSlice } from "@/store/titleSlice";
 export default function SendingClipSuccess() {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -72,11 +72,11 @@ export default function SendingClipSuccess() {
           variant="contained"
           onClick={() => {
             dispatch(clearSuccessSlice({ success: false, key: null }));
-            dispatch(clearPasswordSlice());
-            dispatch(clearOneTimeSlice());
-            dispatch(clearExpirationSlice());
-            dispatch(clearTitleSlice());
-            dispatch(clearContentSlice());
+            dispatch(setPasswordSlice(null));
+            dispatch(setOneTimeSlice(false));
+            dispatch(setExpirationSlice(1));
+            dispatch(setTitleSlice(null));
+            dispatch(setContentSlice(null));
             router.push(`/show/${key}/${password ? password : ""}`);
           }}
         >

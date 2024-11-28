@@ -43,6 +43,7 @@ export default function AddNewClipBtn() {
       })
     );
     setLoading(false);
+
     const res = await axios.post("/api/redis", {
       command: "set",
       key: key,
