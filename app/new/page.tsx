@@ -56,8 +56,8 @@ export default function Home() {
           <ClipContent />
           <ContentError />
           <div className="flex flex-wrap justify-center items-center w-full">
-            <div className="flex flex-col gap-4 w-full">
-              <div className="flex gap-4  font-semibold flex-col ">
+            <div className="flex flex-col gap-4 w-full ml-4">
+              <div className="flex gap-4  font-semibold flex-col  ">
                 <div className="text-lg">
                   Expiration: {expiration} {expiration > 1 ? "Hours" : "Hour"}
                 </div>
