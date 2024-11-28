@@ -2,7 +2,7 @@
 
 import NewClipBtn from "@/components/NewClipBtn";
 import FindClipBtn from "@/components/FindClipBtn";
-import { Typography } from "@mui/material";
+import { Card, Typography } from "@mui/material";
 export default async function Home() {
   return (
     <div>
@@ -17,21 +17,41 @@ export default async function Home() {
           fontFamily: "monospace",
         }}
       >
-        <div
-          style={{
+        <Card
+          sx={{
+            padding: "20px",
             display: "flex",
             flexDirection: "column",
-            gap: "10px",
-            marginBottom: "50px",
+            alignItems: "center",
+            gap: "20px",
           }}
         >
-          <Typography variant="h4">Create a new clip</Typography>
-          <NewClipBtn />
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          <Typography variant="h4">Find a clip</Typography>
-          <FindClipBtn />
-        </div>
+          <div>
+            <Typography
+              sx={{
+                fontSize: "2rem",
+                fontFamily: "monospace",
+                textAlign: "center",
+              }}
+            >
+              Create a clip board or find one using the Clipboard ID you have!
+            </Typography>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+            }}
+          >
+            <NewClipBtn />
+          </div>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "10px" }}
+          >
+            <FindClipBtn />
+          </div>
+        </Card>
       </div>
     </div>
   );

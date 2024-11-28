@@ -36,13 +36,21 @@ const SendingClipSuccess = dynamic(
 
 export default function Home() {
   return (
-    <div style={{ backgroundColor: "#F0F0F0", fontFamily: "monospace" }}>
+    <div
+      style={{
+        display: "flex",
+        fontFamily: "monospace",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <SendingClipSuccess />
+
       <Card
         style={{
           width: "fit-content",
           height: "fit-content",
-
+          fontFamily: "monospace",
           marginTop: "10%",
         }}
       >
@@ -105,9 +113,21 @@ export default function Home() {
                   flexDirection: "row",
                   flexWrap: "wrap",
                   justifyContent: "start",
+                  alignItems: "center",
                 }}
               >
-                <ExpirationSlider />
+                <div>
+                  <div
+                    style={{
+                      fontSize: "1rem",
+                      marginLeft: "-10px",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    Expiration time:
+                  </div>
+                  <ExpirationSlider />
+                </div>
                 <OneTimeUseCheckBox />
                 <Password />
               </div>
