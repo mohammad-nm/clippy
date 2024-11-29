@@ -29,11 +29,17 @@ import { Card, Typography, Box } from "@mui/material";
 export default function Home() {
   return (
     <Box className="flex items-center justify-center h-screen bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-4">
-      <Card className="p-6 flex flex-col items-center gap-10 bg-white/80 backdrop-blur-md rounded-xl shadow-lg max-w-3xl  text-center">
-        <Typography variant="h4" className="font-bold text-gray-800">
+      <Card className="p-6 flex flex-col items-center gap-10 bg-white/80 backdrop-blur-md rounded-xl shadow-lg max-w-4xl  text-center">
+        <Typography
+          variant="h4"
+          className="text-2xl sm:text-4xl font-bold text-gray-800 "
+        >
           Create a Clipboard or Find One!
         </Typography>
-        <Typography variant="body1" className="text-gray-600">
+        <Typography
+          variant="body1"
+          className="text-sm sm:text-lg text-gray-600 "
+        >
           Easily create a new clipboard or find one using your Clipboard ID.
           Share and organize effortlessly!
         </Typography>

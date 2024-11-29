@@ -128,10 +128,10 @@ export default function Home() {
       <Card className="w-full max-w-4xl h-fit p-8 sm:p-12 bg-white rounded-3xl shadow-2xl overflow-hidden transform transition duration-300 hover:scale-x-105 mt-10">
         <div className="flex flex-col gap-4 mt-8">
           <div className="flex flex-wrap gap-4 items-center justify-start">
-            <div className="text-4xl font-extrabold text-gray-800 mb-4">
+            <div className="text-2xl sm:text-4xl font-extrabold text-gray-800 mb-4">
               Create your clipboard:
             </div>
-            <div className="text-lg text-gray-600 ml-2">
+            <div className="text-sm sm:text-lg text-gray-600 ml-2">
               Add a title and content to save, and set an expiration time.
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function Home() {
           <div className="flex flex-wrap justify-center items-center w-full mt-8">
             <div className="flex flex-col gap-6 w-full">
               <div className="flex flex-col gap-4">
-                <div className="text-lg font-semibold text-gray-700">
+                <div className="text-sm sm:text-lg font-semibold text-gray-700">
                   Expiration: {expiration} {expiration > 1 ? "Days" : "Day"}
                 </div>
                 <ExpirationSlider />

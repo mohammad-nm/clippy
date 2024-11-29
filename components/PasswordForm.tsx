@@ -100,7 +100,7 @@ export default function PasswordForm({ pass }: { pass: string }) {
       <div className="flex flex-col items-center justify-center bg-white p-8 rounded-xl shadow-lg w-full max-w-2xl space-y-6 ">
         <Typography
           variant="h4"
-          className="font-bold text-gray-800 text-center"
+          className="text-2xl sm:text-4xl font-bold text-gray-800 text-center "
         >
           Secure Your Clipboard
         </Typography>
@@ -112,7 +112,7 @@ export default function PasswordForm({ pass }: { pass: string }) {
           value={password}
           onChange={handleChange}
           fullWidth
-          className="transition-all duration-300 focus:ring-2 focus:ring-blue-500"
+          className="transition-all duration-300 focus:ring-2 focus:ring-blue-500 "
           style={{
             backgroundColor: "#f9fafb",
             borderRadius: "8px",
@@ -125,7 +125,7 @@ export default function PasswordForm({ pass }: { pass: string }) {
           color="primary"
           onClick={handleSubmit}
           fullWidth
-          className="py-2 mt-4 text-lg rounded-full transition-all duration-300 hover:bg-blue-600 disabled:bg-gray-400 max-w-xs"
+          className="py-2 mt-4 text-lg rounded-full transition-all duration-300 hover:bg-blue-600 disabled:bg-gray-400 max-w-xs "
           disabled={loading}
         >
           {loading ? "Loading..." : "Try"}
@@ -135,7 +135,7 @@ export default function PasswordForm({ pass }: { pass: string }) {
           <Typography
             variant="body2"
             color="error"
-            className="mt-4 text-center text-sm font-semibold text-orange-500"
+            className="mt-4 text-center text-sm sm:text-base font-semibold text-orange-500"
           >
             *Incorrect password, please try again.
           </Typography>

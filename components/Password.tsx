@@ -78,7 +78,7 @@ export default function Password() {
             />
           }
           label={
-            <span className="text-lg text-gray-700 font-semibold">
+            <span className="text-lg  text-gray-700 font-semibold">
               Password Protected
             </span>
           }
@@ -111,7 +111,7 @@ export default function Password() {
         )}
       </FormGroup>
       {isPasswordProtected && (
-        <div className="w-full text-sm text-orange-500 font-semibold mt-2 animate-pulse ml-8">
+        <div className="w-full text-sm sm:text-base text-orange-500 font-semibold mt-2 animate-pulse ml-8">
           *Your clipboard will be password protected after setting this
           password.
         </div>

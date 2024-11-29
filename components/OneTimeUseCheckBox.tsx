@@ -63,7 +63,7 @@ export default function OneTimeUseCheckBox() {
         }
       />
       {checked && (
-        <div className="w-fit text-left text-sm font-mono font-semibold text-orange-500 ml-8 animate-pulse">
+        <div className="w-fit text-left text-sm sm:text-base font-mono font-semibold text-orange-500 ml-8 animate-pulse">
           *Your clipboard will be deleted after one use.
         </div>
       )}

@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   description:
     "Cllipy is a clipboard manager that allows you to share your clipboard with others.",
 };
-
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 export default function RootLayout({
   children,
 }: Readonly<{

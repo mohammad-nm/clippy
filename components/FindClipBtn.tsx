@@ -10,7 +10,7 @@ export default function FindClipBtn() {
       variant="contained"
       color="secondary"
       startIcon={<SearchIcon />}
-      className="py-3 text-white bg-purple-500 hover:bg-purple-600 shadow-lg transform transition-all hover:scale-105"
+      className="py-3 text-white bg-purple-500 hover:bg-purple-600 shadow-lg transform transition-all hover:scale-105 text-xs sm:text-lg"
       onClick={() => router.push("/show")}
     >
       Find Clipboard

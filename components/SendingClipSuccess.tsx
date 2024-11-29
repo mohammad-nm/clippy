@@ -124,28 +124,12 @@ export default function SendingClipSuccess() {
   const key = success.key;
 
   return (
-    <Dialog open={success.success} sx={{ borderRadius: "16px" }}>
-      <Card
-        sx={{
-          p: 4,
-          maxWidth: 500,
-          width: "100%",
-          margin: "auto",
-          borderRadius: "20px",
-          boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <DialogTitle
-          sx={{
-            textAlign: "center",
-            color: "#FF7043",
-            fontWeight: "bold",
-            fontSize: "1.5rem",
-          }}
-        >
+    <Dialog open={success.success} className="rounded-3xl">
+      <Card className="p-4 max-w-5xl w-full m-auto rounded-3xl shadow-lg">
+        <DialogTitle className="text-center text-2xl sm:text-4xl text-orange-500 font-bold">
           Success!
           <IconButton
-            sx={{ position: "absolute", top: 8, right: 8, color: "#FF7043" }}
+            className="absolute top-2 right-2 text-orange-500"
             onClick={() => {
               dispatch(clearSuccessSlice({ success: false, key: null }));
               dispatch(setPasswordSlice(null));
@@ -160,40 +144,40 @@ export default function SendingClipSuccess() {
         </DialogTitle>
 
         <DialogContent>
-          <Typography
-            variant="h6"
-            sx={{ color: "#4CAF50", fontWeight: "bold" }}
-          >
+          <Typography className="text-xl sm:text-2xl font-bold text-green-500">
             💾 Clipboard Saved!
           </Typography>
 
-          <Divider sx={{ my: 2 }} />
+          <Divider className="my-2" />
 
-          <Box sx={{ mb: 2 }}>
+          <Box className="mb-2">
             <Typography variant="body1" color="textSecondary">
               🆔 Clipboard ID:{" "}
-              <strong style={{ color: "#FF7043", fontSize: "1.25rem" }}>
-                {key}
-              </strong>
+              <strong className="text-sm sm:text-xl font-bold ">{key}</strong>
             </Typography>
             <Typography
               variant="body1"
-              className="mb-2 text-sm font-semibold text-red-400"
+              className="mb-2 text-xs sm:text-base font-semibold text-red-400"
             >
               📋 *Save this id to find your ClipBoard later
             </Typography>
             <Typography variant="body1" color="textSecondary">
               🔑 Password:{" "}
-              <strong>{password ? password : "No Password"}</strong>{" "}
+              <strong className="text-sm sm:text-xl">
+                {password ? password : "No Password"}
+              </strong>{" "}
             </Typography>
             <Typography variant="body1" color="textSecondary">
               ⏳ Expiration:{" "}
-              <strong style={{ color: "#FF7043" }}>
+              <strong className="text-sm sm:text-xl">
                 {expiration > 1 ? expiration + " Hours" : expiration + " Hour"}
               </strong>
             </Typography>
             <Typography variant="body1" color="textSecondary">
-              🔄 One Time Use: <strong>{oneTime ? "Yes" : "No"}</strong>
+              🔄 One Time Use:{" "}
+              <strong className="text-sm sm:text-xl">
+                {oneTime ? "Yes" : "No"}
+              </strong>
             </Typography>
           </Box>
 
@@ -201,27 +185,23 @@ export default function SendingClipSuccess() {
             🔗 You can share and visit your ClipBoard with this link:{" "}
             <a
               href={`https://clippy-theta.vercel.app/show/${key}`}
-              style={{
-                color: "#5f45d1",
-                textDecoration: "underline",
-                fontWeight: "bold",
-              }}
+              className="text-blue-500 underline text-sm sm:text-base"
             >
               https://clippy-theta.vercel.app/show/{key}
             </a>
           </Typography>
 
-          <Box sx={{ display: "flex", justifyContent: "center", mt: 3 }}>
+          <Box className="flex justify-center mt-3">
             <Chip
               label="🔗 Press the button below to go to your ClipBoard!"
-              color="primary"
+              color="success"
               variant="outlined"
-              sx={{ fontWeight: "bold", fontSize: "1.1rem" }}
+              className="font-bold text-sm sm:text-base"
             />
           </Box>
         </DialogContent>
 
-        <DialogActions sx={{ justifyContent: "center" }}>
+        <DialogActions className="justify-center">
           <Button
             color="primary"
             variant="contained"
@@ -234,15 +214,7 @@ export default function SendingClipSuccess() {
               dispatch(setContentSlice(null));
               router.push(`/show/${key}/${password ? password : ""}`);
             }}
-            sx={{
-              backgroundColor: "#FF7043",
-              color: "white",
-              "&:hover": {
-                backgroundColor: "#FF5722",
-              },
-              fontWeight: "bold",
-              textTransform: "none",
-            }}
+            className="bg-orange-500 text-white font-bold hover:bg-orange-600 "
           >
             Go to Clipboard
           </Button>

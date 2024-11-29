@@ -75,8 +75,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 font-mono p-6 sm:p-10">
-      <Card className="w-full max-w-3xl p-8 bg-white/80 rounded-3xl shadow-lg backdrop-blur-md transform transition duration-300 hover:scale-105">
-        <div className="text-4xl font-extrabold text-center text-gray-800 mb-8">
+      <Card className="w-full max-w-4xl p-8 bg-white/80 rounded-3xl shadow-lg backdrop-blur-md transform transition duration-300 hover:scale-105">
+        <div className="text-2xl sm:text-4xl font-extrabold text-center text-gray-800 mb-8">
           Enter your Clipboard ID to find it:
         </div>
 
@@ -114,7 +114,9 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-4 mt-6 sm:mt-0">
-            <div className="text-lg font-semibold text-gray-700">Or</div>
+            <div className="text-sm sm:text-lg font-semibold text-gray-700">
+              Or
+            </div>
             <NewClipBtn />
           </div>
         </div>
