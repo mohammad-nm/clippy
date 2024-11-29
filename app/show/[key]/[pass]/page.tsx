@@ -21,14 +21,14 @@
 import NoData from "@/components/NoData";
 import ShowData from "@/components/ShowData";
 import axios from "axios";
-import { Box, Typography, CircularProgress } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 interface ShowPageProps {
-  params: { key: string };
+  params: Promise<{ key: string }>;
 }
 
 export default async function ShowPage({ params }: ShowPageProps) {
-  const { key } = params;
+  const { key } = await params;
 
   // Fetch the clipboard data from the API
   let data = null;

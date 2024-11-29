@@ -25,7 +25,7 @@ export default async function ShowPage({ params }: ShowPageProps) {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen p-4 sm:p-10  bg-gradient-to-tr from-green-400 via-blue-500 to-purple-600 w-full">
+    <div className="flex justify-center items-center h-screen p-4 sm:p-10  bg-gradient-to-tr from-green-400 via-blue-500 to-purple-600 w-full ">
       <ShowData data={data} keyValue={key} />
     </div>
   );
