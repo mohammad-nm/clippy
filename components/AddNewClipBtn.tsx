@@ -79,7 +79,7 @@ export default function AddNewClipBtn() {
       variant="contained"
       color="primary"
       startIcon={<AddIcon />}
-      className="py-3 text-white bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 hover:bg-gradient-to-br transform transition-all hover:scale-105 shadow-xl "
+      className="py-3 text-white bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 hover:bg-gradient-to-br transform transition-all min-w-[550px]:hover:scale-105 shadow-xl "
       onClick={handleClick}
       disabled={loading}
     >

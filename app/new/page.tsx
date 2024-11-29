@@ -125,7 +125,7 @@ export default function Home() {
   return (
     <div className="flex justify-center items-center p-2 sm:p-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 w-full min-h-screen font-mono ">
       <SendingClipSuccess />
-      <Card className="w-full max-w-4xl h-fit p-4 sm:p-8 bg-white rounded-3xl shadow-2xl overflow-hidden transform transition duration-300 hover:scale-x-105 mt-1/4">
+      <Card className="w-full max-w-4xl h-fit p-4 sm:p-8 bg-white rounded-3xl shadow-2xl overflow-hidden transform transition duration-300 min-w-[550px]:hover:scale-x-105 mt-1/4">
         <div className="flex flex-col gap-4 mt-8">
           <div className="flex flex-wrap gap-4 items-center justify-start">
             <div className="text-xl sm:text-4xl font-extrabold text-gray-800 mb-4">

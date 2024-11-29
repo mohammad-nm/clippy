@@ -3,6 +3,12 @@ import { setExpirationSlice } from "@/store/expirationSlice";
 import { setPasswordSlice } from "@/store/passwordSlice";
 import { setContentSlice } from "@/store/contentSlice";
 import { clearSuccessSlice } from "@/store/successModal";
+import dynamic from "next/dynamic";
+
+const Dialog = dynamic(() => import("@mui/material/Dialog"), {
+  ssr: false,
+});
+
 import {
   Button,
   DialogTitle,
@@ -15,7 +21,6 @@ import {
   Chip,
   IconButton,
 } from "@mui/material";
-import { Dialog } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -37,8 +42,8 @@ export default function SendingClipSuccess() {
 
   return (
     <Dialog open={success.success} className="rounded-3xl">
-      <Card className="p-4 max-w-5xl w-full m-auto rounded-3xl shadow-lg">
-        <DialogTitle className="text-center text-2xl sm:text-4xl text-orange-500 font-bold">
+      <Card className="p-2 sm:p-4 max-w-5xl w-full m-auto rounded-3xl shadow-lg">
+        <DialogTitle className="text-center text-xl sm:text-4xl text-orange-500 font-bold">
           Success!
           <IconButton
             className="absolute top-2 right-2 text-orange-500"
@@ -82,7 +87,7 @@ export default function SendingClipSuccess() {
             <Typography variant="body1" color="textSecondary">
               ⏳ Expiration:{" "}
               <strong className="text-sm sm:text-xl">
-                {expiration > 1 ? expiration + " Hours" : expiration + " Hour"}
+                {expiration > 1 ? expiration + " Days" : expiration + " Day"}
               </strong>
             </Typography>
             <Typography variant="body1" color="textSecondary">
